@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="model_path" default="$(find centernet_ros)/resources/models/ctdet_coco_dla_2x.pth" />
+    <arg name="task" default="ctdet" />
+    <arg name="threshold" default="0.6" />
+    <arg name="image" default="/realsense_front/color/image_rect_color" />
+
+    <node name="pose_estimator" pkg="centernet_ros" type="centernet.py" output="screen" required="true">
+        <param name="model_path" value="$(arg model_path)" />
+        <param name="task" value="$(arg task)" />
+        <param name="threshold" value="$(arg threshold)"/>
+        <remap from="~image" to="$(arg image)" />
+    </node>
+</launch>
