@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  centernet:
+    image: centernet
+    build: .
+    container_name: centernet
+    command: bash -c "cd /ros/src/centernet_ros && pipenv run bash -c 'source /ros/devel/setup.bash;roslaunch centernet_ros centernet.launch'"
+    runtime: nvidia
+    tty: true
+    volumes:
+      - ${PWD}:/ros/src/centernet_ros
+    network_mode: "host"

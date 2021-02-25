@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pyyaml = "*"
+empy = "*"
+rospkg = "*"
+opencv-contrib-python = "*"
+cython = "*"
+numba = "*"
+progress = "*"
+matplotlib = "*"
+easydict = "*"
+scipy = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
